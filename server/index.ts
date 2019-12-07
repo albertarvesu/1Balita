@@ -2,17 +2,17 @@ import 'module-alias/register';
 import express from 'express';
 import morgan from 'morgan';
 import mongoose from 'mongoose';
-import nextjs from 'server/lib/next';
+import nextjs from './lib/next';
 import dotenv from 'dotenv';
 
-import Item from './models/Item';
-
 dotenv.config();
+
+import router from './router';
 
 const app: express.Application = express();
 
 nextjs.nextApp.prepare().then(async () => {
-  const port = process.env.PORT || 8000;
+  const port = process.env.PORT || 3000;
 
   mongoose
     .connect('mongodb://db:27017/1Balita', {
@@ -26,14 +26,11 @@ nextjs.nextApp.prepare().then(async () => {
       skip: (req: express.Request) => req.url.startsWith('/_next/')
     })
   );
+
   app.use(express.json());
   app.use(express.static('public'));
 
-  // app.get('/api', (req, res) => {
-  //   Item.find()
-  //     .then(items => res.json(items))
-  //     .catch(err => res.status(404).json({ msg: 'No items found' }));
-  // });
+  app.use(router);
 
   app.get('*', (req, res) => {
     nextjs.handle(req, res);

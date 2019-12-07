@@ -1,0 +1,32 @@
+[
+  {
+    "name": "@ABSCBNNews",
+    "link": "//news.abs-cbn.com",
+    "imageUrl": "https://pbs.twimg.com/profile_images/1194096034722435072/kfkit_H8_normal.jpg"
+  },
+  {
+    "name": "@gmanews",
+    "link": "//gmanews.tv",
+    "imageUrl": "https://pbs.twimg.com/profile_images/1131064290998231041/3by86sfl_normal.png"
+  },
+  {
+    "name": "@PhilippineStar",
+    "link": "//www.philstar.com",
+    "imageUrl": "https://pbs.twimg.com/profile_images/945921611651194880/FlsJpxMm_normal.jpg"
+  },
+  {
+    "name": "@cnnphilippines",
+    "link": "//www.cnnphilippines.com",
+    "imageUrl": "https://pbs.twimg.com/profile_images/947598867985457152/lOzb5ud9_normal.jpg"
+  },
+  {
+    "name": "@manilabulletin",
+    "link": "https://mb.com.ph",
+    "imageUrl": "https://pbs.twimg.com/profile_images/1145117960840736768/JxSshlWs_normal.jpg"
+  },
+  {
+    "name": "@inquirerdotnet",
+    "link": "//inquirer.net",
+    "imageUrl": "https://pbs.twimg.com/profile_images/1176785678694141952/zhu6Qz3__normal.png"
+  }
+]

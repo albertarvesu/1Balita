@@ -4,12 +4,12 @@
   "description": "Aggregated news feed from different local provider",
   "main": "index.js",
   "scripts": {
-    "dev": "next",
-    "build": "next build",
-    "start": "next start",
-    "fetch": "ts-node ./server/lib/fetch.ts ",
+    "dev:server": "ts-node --files  --transpile-only --project ./tsconfig.server.json ./server/index.ts",
+    "dev": "cross-env TSC_WATCHFILE=UseFsEventsWithFallbackDynamicPolling npx nodemon --watch 'server/**/*.ts' --exec 'npm run dev:server'",
     "lint": "eslint './**/*.{ts,tsx,js,jsx}'",
-    "lint:fix": "eslint './**/*.{ts,tsx,js,jsx}' --fix"
+    "lint:fix": "eslint './**/*.{ts,tsx,js,jsx}' --fix",
+    "next:build": "next build",
+    "nodemon": "npx nodemon"
   },
   "keywords": [
     "twitter",
@@ -22,9 +22,11 @@
   "dependencies": {
     "@zeit/next-css": "^1.0.1",
     "dotenv": "^8.2.0",
+    "module-alias": "^2.2.2",
     "mongoose": "^5.7.12",
     "morgan": "^1.9.1",
     "next": "^9.1.4",
+    "nodemon": "^2.0.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "styled-components": "^4.4.1",
@@ -43,6 +45,7 @@
     "@typescript-eslint/eslint-plugin": "^2.8.0",
     "@typescript-eslint/parser": "^2.8.0",
     "babel-plugin-module-resolver": "^3.2.0",
+    "cross-env": "^6.0.3",
     "eslint": "^6.7.0",
     "eslint-config-prettier": "^6.7.0",
     "eslint-config-react": "^1.1.7",
