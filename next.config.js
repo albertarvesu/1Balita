@@ -5,7 +5,7 @@ module.exports = {
   webpack(config) {
     config.resolve.alias.client = './client';
     config.resolve.alias.server = './server';
-    config.resolve.alias.server = './styles';
+    config.resolve.alias.styles = './styles';
     config.plugins.push(new ForkTsCheckerWebpackPlugin());
     return config;
   }

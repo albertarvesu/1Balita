@@ -2,23 +2,14 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "server/*": [
-        "server/*"
-      ],
-      "styles/*": [
-        "styles/*"
-      ],
-      "client/*": [
-        "client/*"
-      ]
+      "server/*": ["server/*"],
+      "styles/*": ["styles/*"],
+      "client/*": ["client/*"]
     },
     "allowJs": true,
     "allowSyntheticDefaultImports": true,
     "jsx": "preserve",
-    "lib": [
-      "dom",
-      "es2017"
-    ],
+    "lib": ["dom", "es2017"],
     "module": "esnext",
     "moduleResolution": "node",
     "noEmit": true,
@@ -39,19 +30,8 @@
     "forceConsistentCasingInFileNames": true,
     "esModuleInterop": true,
     "isolatedModules": true,
-    "types": [
-      "jest",
-      "node"
-    ]
+    "types": ["jest", "node"]
   },
-  "include": [
-    "client",
-    "server",
-    "pages",
-    "types",
-    "styles"
-  ],
-  "exclude": [
-    "node_modules"
-  ]
+  "include": ["client", "server", "pages", "types", "styles"],
+  "exclude": ["node_modules"]
 }

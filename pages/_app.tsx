@@ -15,7 +15,6 @@ export default class MyApp extends App {
   }
   render() {
     const { Component, pageProps } = this.props;
-    console.warn({ Component });
     return (
       <ThemeProvider theme={themeObject}>
         <Component {...pageProps} />
