@@ -20,8 +20,10 @@ const insert = async (screenName: string, tweet: any) => {
     { id: tweet.id },
     params,
     { upsert: true, new: true },
-    error => {
-      console.warn({ error });
+    (error, newItem) => {
+      if (!error) {
+        console.warn({ newItem });
+      }
     }
   );
 };

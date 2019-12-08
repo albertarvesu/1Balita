@@ -6,4 +6,7 @@ export const Link = styled.a`
   &:hover {
     color: #2b38c5;
   }
+  &:visited {
+    color: #b3b3b3;
+  }
 `;
