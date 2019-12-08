@@ -16,7 +16,7 @@ nextjs.nextApp.prepare().then(async () => {
   const port = process.env.PORT || 3000;
 
   mongoose
-    .connect(`${process.env.DB_HOST}/${process.env.DB_NAME}`, {
+    .connect(process.env.MONGODB_URI || 'http://localhost:27017', {
       useNewUrlParser: true
     })
     .then(() => console.log('MongoDB Connected'))
