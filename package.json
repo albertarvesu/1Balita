@@ -8,6 +8,8 @@
     "dev": "cross-env TSC_WATCHFILE=UseFsEventsWithFallbackDynamicPolling npx nodemon --watch 'server/**/*.ts' --exec 'npm run dev:server'",
     "lint": "eslint './**/*.{ts,tsx,js,jsx}'",
     "lint:fix": "eslint './**/*.{ts,tsx,js,jsx}' --fix",
+    "prod:server": "NODE_ENV=production ts-node --files --transpile-only --project ./tsconfig.server.json ./server/index.ts",
+    "start": "npm run prod:server",
     "next:build": "next build",
     "nodemon": "npx nodemon"
   },

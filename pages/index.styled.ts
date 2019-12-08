@@ -53,3 +53,5 @@ export const StyledGrid = styled.section`
     flex-direction: column;
   }
 `;
+
+export default PageWrapper;
