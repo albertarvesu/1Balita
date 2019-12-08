@@ -2,12 +2,13 @@ import 'module-alias/register';
 import express from 'express';
 import morgan from 'morgan';
 import mongoose from 'mongoose';
-import nextjs from './lib/next';
 import dotenv from 'dotenv';
 
 dotenv.config();
 
+import nextjs from './lib/next';
 import router from './router';
+import job from './job';
 
 const app: express.Application = express();
 
@@ -15,7 +16,7 @@ nextjs.nextApp.prepare().then(async () => {
   const port = process.env.PORT || 3000;
 
   mongoose
-    .connect('mongodb://db:27017/1Balita', {
+    .connect(`${process.env.DB_HOST}/${process.env.DB_NAME}`, {
       useNewUrlParser: true
     })
     .then(() => console.log('MongoDB Connected'))
@@ -31,6 +32,8 @@ nextjs.nextApp.prepare().then(async () => {
   app.use(express.static('public'));
 
   app.use(router);
+
+  job.start();
 
   app.get('*', (req, res) => {
     nextjs.handle(req, res);

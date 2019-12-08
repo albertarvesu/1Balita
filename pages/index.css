@@ -146,4 +146,11 @@ html * {
   color: #4d4d4d;
   line-height: 1.375rem;
   font-weight: 300;
+
+  /*
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.375rem;
+  font-weight: 300;
+  background-color: #272822;
+*/
 }
