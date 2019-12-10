@@ -6,25 +6,23 @@ import {
   PageWrapper,
   NavTitle,
   NavText,
-  NavTextHeading,
   StyledGrid
 } from './index.styled';
 import { Container } from 'client/components/Styled/Container/Container';
 import Block from 'client/components/Block/Block';
 
+import { SITE_NAME, SITE_TITLE } from '../constants';
 import './index.css';
-import newsProviders from './providers.json';
+import newsProviders from './../providers.json';
 
 export default () => (
   <PageWrapper>
     <NavWrapper>
       <LogoWrapper>
         <img height={50} width={50} src="/static/juan.png" />
-        <NavTitle>1Balita</NavTitle>
+        <NavTitle>{SITE_NAME}</NavTitle>
       </LogoWrapper>
-      <NavText>
-        Online News for Every <NavTextHeading>Juan</NavTextHeading>
-      </NavText>
+      <NavText>{SITE_TITLE}</NavText>
     </NavWrapper>
     <Container topOuterSpacing={2}>
       <StyledGrid>

@@ -140,6 +140,13 @@ body {
   min-height: 100vh;
 }
 
+.clearfix:after {
+  content: ' ';
+  display: block;
+  height: 0;
+  clear: both;
+}
+
 html * {
   font-family: 'Rubik', verdana, sans-serif;
   min-width: 0;

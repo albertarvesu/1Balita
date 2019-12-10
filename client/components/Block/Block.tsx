@@ -3,7 +3,7 @@ import React from 'react';
 import { Container } from 'client/components/Styled/Container/Container';
 import BlockHeader from './Header/Header';
 import BlockItem from './Item/Item';
-import { ViewMore } from './Block.styled';
+import { ItemImage, ViewMore } from './Block.styled';
 
 interface IProps {
   name: string;
@@ -39,6 +39,11 @@ export const Block: React.FC<IProps> = ({ name, link, imageUrl }) => {
       <Container topOuterSpacing={1}>
         {items.map(item => (
           <BlockItem key={item.id} to={item.url}>
+            {item.mediaUrl && (
+              <ItemImage>
+                <img src={item.mediaUrl} />
+              </ItemImage>
+            )}
             {item.text}
           </BlockItem>
         ))}
