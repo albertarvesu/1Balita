@@ -1,6 +1,6 @@
 import cron from 'cron';
 
-import providers from './../../pages/providers.json';
+import providers from './../../providers.json';
 import populate from './../lib/populate';
 
 const INTERVAL_IN_MINUTES = 5;

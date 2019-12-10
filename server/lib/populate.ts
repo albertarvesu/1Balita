@@ -8,12 +8,16 @@ const dropUrlFromText = url => url.replace(/(?:https?|ftp):\/\/[\n\S]+/g, '');
 
 const insert = async (screenName: string, tweet: any) => {
   const { urls, media } = tweet.entities;
-  const url = urls[0] || media;
+  const firstUrl = urls.length && urls[0];
+  const firstMedia = media.length && media[0];
+  const url = firstUrl || firstMedia;
+
   const params = {
     id: tweet.id,
     provider: screenName,
     text: dropUrlFromText(tweet.text),
     url: extractUrlFromTweet(url),
+    mediaUrl: firstMedia && firstMedia.media_url,
     createdAt: tweet.created_at
   };
   Item.findOneAndUpdate(

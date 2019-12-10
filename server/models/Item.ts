@@ -13,6 +13,7 @@ const ItemSchema = new Schema({
     type: String,
     required: true
   },
+  mediaUrl: String,
   createdAt: String,
   addedAt: {
     type: Date,
