@@ -34,7 +34,7 @@ export const Block: React.FC<IProps> = ({ name, link, imageUrl }) => {
   }
 
   return (
-    <Container bottomOuterSpacing={1}>
+    <Container bottomOuterSpacing={2}>
       <BlockHeader src={imageUrl} to={link} name={name} />
       <Container topOuterSpacing={1}>
         {items.map(item => (
