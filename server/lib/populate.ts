@@ -8,9 +8,13 @@ const dropUrlFromText = url => url.replace(/(?:https?|ftp):\/\/[\n\S]+/g, '');
 
 const insert = async (screenName: string, tweet: any) => {
   const { urls, media } = tweet.entities;
-  const firstUrl = urls.length && urls[0];
-  const firstMedia = media.length && media[0];
+  const firstUrl = urls && urls.length && urls[0];
+  const firstMedia = media && media.length && media[0];
   const url = firstUrl || firstMedia;
+
+  if (!url) {
+    return;
+  }
 
   const params = {
     id: tweet.id,
@@ -39,6 +43,8 @@ const populate = async (screenName: string) => {
       insert(screenName, tweet);
     });
     resolve();
+  }).catch(error => {
+    console.log('caught', error.message);
   });
 };
 

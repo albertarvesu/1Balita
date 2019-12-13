@@ -8,6 +8,9 @@ module.exports = {
     config.resolve.alias.styles = './styles';
     config.plugins.push(new ForkTsCheckerWebpackPlugin());
     return config;
+  },
+  env: {
+    GOOGLE_ANALYTICS_CODE: process.env.GOOGLE_ANALYTICS_CODE
   }
 };
 

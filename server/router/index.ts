@@ -4,7 +4,7 @@ import Item from './../models/Item';
 import populate from './../lib/populate';
 
 const router = express.Router();
-const LIMIT = 15;
+const LIMIT = 20;
 
 router
   .get('/news', (req, res) => {

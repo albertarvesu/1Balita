@@ -11,7 +11,7 @@ interface IProps {
   imageUrl: string;
 }
 
-const DEFAULT_COUNT = 8;
+const DEFAULT_COUNT = 10;
 
 export const Block: React.FC<IProps> = ({ name, link, imageUrl }) => {
   const [news, setNews] = React.useState<any[]>([]);
