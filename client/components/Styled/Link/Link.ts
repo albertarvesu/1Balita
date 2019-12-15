@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 export const Link = styled.a`
   display: block;
@@ -9,4 +9,4 @@ export const Link = styled.a`
   &:visited {
     color: #b3b3b3;
   }
-`;
+`

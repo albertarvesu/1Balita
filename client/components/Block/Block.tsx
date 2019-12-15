@@ -1,31 +1,31 @@
-import React from 'react';
+import React from 'react'
 
-import { Container } from 'client/components/Styled/Container/Container';
-import BlockHeader from './Header/Header';
-import BlockItem from './Item/Item';
-import { ItemImage, ViewMore } from './Block.styled';
+import { Container } from 'client/components/Styled/Container/Container'
+import BlockHeader from './Header/Header'
+import BlockItem from './Item/Item'
+import { ItemImage, ViewMore } from './Block.styled'
 
 interface IItem {
-  id: string;
-  provider: string;
-  text: string;
-  url: string;
-  mediaUrl: string;
+  id: string
+  provider: string
+  text: string
+  url: string
+  mediaUrl: string
 }
 
 interface IProps {
-  name: string;
-  link: string;
-  imageUrl: string;
-  items: ReadonlyArray<IItem>;
+  name: string
+  link: string
+  imageUrl: string
+  items: ReadonlyArray<IItem>
 }
 
-const DEFAULT_COUNT = 10;
+const DEFAULT_COUNT = 10
 
 export const Block: React.FC<IProps> = ({ name, link, imageUrl, items }) => {
-  const [collapsed, setCollapsed] = React.useState(true);
-  const onViewMore = () => setCollapsed(!collapsed);
-  const showMore = items.length > DEFAULT_COUNT && collapsed;
+  const [collapsed, setCollapsed] = React.useState(true)
+  const onViewMore = () => setCollapsed(!collapsed)
+  const showMore = items.length > DEFAULT_COUNT && collapsed
   return (
     <Container bottomOuterSpacing={2}>
       <BlockHeader src={imageUrl} to={link} name={name} />
@@ -51,7 +51,7 @@ export const Block: React.FC<IProps> = ({ name, link, imageUrl, items }) => {
         </Container>
       )}
     </Container>
-  );
-};
+  )
+}
 
-export default Block;
+export default Block

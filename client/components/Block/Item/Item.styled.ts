@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 export const StyledListItem = styled.div`
   word-break: break-word;
@@ -12,4 +12,4 @@ export const StyledListItem = styled.div`
     clear: both;
   }
   padding: 0.5rem 0;
-`;
+`

@@ -1,0 +1,8 @@
+{
+  "name": "1Balita",
+  "short_name": "1Balita",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FFFFFF",
+  "theme_color": "#4d4d4d"
+}

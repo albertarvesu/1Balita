@@ -1,17 +1,17 @@
-import { ComponentType } from 'react';
+import { ComponentType } from 'react'
 
-import styled, { css } from 'styled-components';
+import styled, { css } from 'styled-components'
 
 export interface IContainerProps {
-  inline?: boolean;
-  leftOuterSpacing?: number;
-  rightOuterSpacing?: number;
-  topOuterSpacing?: number;
-  bottomOuterSpacing?: number;
-  leftInnerSpacing?: number;
-  rightInnerSpacing?: number;
-  topInnerSpacing?: number;
-  bottomInnerSpacing?: number;
+  inline?: boolean
+  leftOuterSpacing?: number
+  rightOuterSpacing?: number
+  topOuterSpacing?: number
+  bottomOuterSpacing?: number
+  leftInnerSpacing?: number
+  rightInnerSpacing?: number
+  topInnerSpacing?: number
+  bottomInnerSpacing?: number
 }
 
 export const Container: ComponentType<IContainerProps> = styled.div`
@@ -64,6 +64,6 @@ export const Container: ComponentType<IContainerProps> = styled.div`
           padding-bottom: ${bottomInnerSpacing}rem;
         `};
     `}
-`;
+`
 
-export default Container;
+export default Container
