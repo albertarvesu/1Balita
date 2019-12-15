@@ -1,28 +1,28 @@
-import React from 'react';
+import React from 'react'
 
-import Document, { Head, Main, NextScript } from 'next/document';
-import { ServerStyleSheet } from 'styled-components';
+import Document, { Head, Main, NextScript } from 'next/document'
+import { ServerStyleSheet } from 'styled-components'
 
 import {
   SITE_DESCRIPTION,
   SITE_IMAGE,
   SITE_NAME,
   SITE_TITLE
-} from '../constants';
+} from '../constants'
 
 export default class MyDocument extends Document {
   static async getInitialProps(ctx) {
-    const styledComponentsSheet = new ServerStyleSheet();
-    const originalRenderPage = ctx.renderPage;
+    const styledComponentsSheet = new ServerStyleSheet()
+    const originalRenderPage = ctx.renderPage
 
     try {
       ctx.renderPage = () =>
         originalRenderPage({
           enhanceApp: App => props =>
             styledComponentsSheet.collectStyles(<App {...props} />)
-        });
+        })
 
-      const initialProps = await Document.getInitialProps(ctx);
+      const initialProps = await Document.getInitialProps(ctx)
       return {
         ...initialProps,
         styles: (
@@ -31,9 +31,9 @@ export default class MyDocument extends Document {
             {styledComponentsSheet.getStyleElement()}
           </>
         )
-      };
+      }
     } finally {
-      styledComponentsSheet.seal();
+      styledComponentsSheet.seal()
     }
   }
   render() {
@@ -68,12 +68,13 @@ export default class MyDocument extends Document {
             content="telephone=no, address=no, email=no"
           />
           <link rel="shortcut icon" href="/static/juan.png" />
+          <link rel="manifest" href="/static/manifest.json" />
         </Head>
         <body>
           <Main />
           <NextScript />
         </body>
       </html>
-    );
+    )
   }
 }

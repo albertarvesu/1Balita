@@ -1,10 +1,10 @@
-import React from 'react';
+import React from 'react'
 
-import { Link } from 'client/components/Styled/Link/Link';
-import { StyledListItem } from './Item.styled';
+import { Link } from 'client/components/Styled/Link/Link'
+import { StyledListItem } from './Item.styled'
 
 interface IProps {
-  to: string;
+  to: string
 }
 
 export const BlockItem: React.FC<IProps> = ({ to, children }) => (
@@ -13,6 +13,6 @@ export const BlockItem: React.FC<IProps> = ({ to, children }) => (
       {children}
     </Link>
   </StyledListItem>
-);
+)
 
-export default BlockItem;
+export default BlockItem

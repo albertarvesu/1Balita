@@ -1,8 +1,8 @@
-import React, { useEffect } from 'react';
+import React, { useEffect } from 'react'
 
-import ReactGA from 'react-ga';
-import Head from 'next/head';
-import fetch from 'isomorphic-unfetch';
+import ReactGA from 'react-ga'
+import Head from 'next/head'
+import fetch from 'isomorphic-unfetch'
 
 import {
   LogoWrapper,
@@ -11,27 +11,26 @@ import {
   NavTitle,
   NavText,
   StyledGrid
-} from './index.styled';
-import { Container } from 'client/components/Styled/Container/Container';
-import Block from 'client/components/Block/Block';
+} from './index.styled'
+import { Container } from 'client/components/Styled/Container/Container'
+import Block from 'client/components/Block/Block'
 
-import { SITE_NAME, SITE_TITLE } from '../constants';
-import './index.css';
-import newsProviders from './../providers.json';
+import { SITE_NAME, SITE_TITLE } from '../constants'
+import './index.css'
+import newsProviders from './../providers.json'
 
 interface IProvider {
-  name: string;
-  link: string;
-  imageUrl: string;
+  name: string
+  link: string
+  imageUrl: string
 }
-
-ReactGA.initialize(process.env.GOOGLE_ANALYTICS_CODE || 'UA-154566102-1');
 
 const Index = ({ newsItems }) => {
   useEffect(() => {
-    ReactGA.set({ page: window.location.pathname });
-    ReactGA.pageview(window.location.pathname);
-  }, []);
+    ReactGA.initialize(process.env.GOOGLE_ANALYTICS_CODE || '')
+    ReactGA.set({ page: window.location.pathname })
+    ReactGA.pageview(window.location.pathname)
+  }, [])
   return (
     <React.Fragment>
       <Head>
@@ -58,14 +57,14 @@ const Index = ({ newsItems }) => {
         </Container>
       </PageWrapper>
     </React.Fragment>
-  );
-};
+  )
+}
 
 Index.getInitialProps = async function() {
   const urls = newsProviders.map(
     (provider: IProvider) =>
       `${process.env.API_HOST}/news?provider=${provider.name}`
-  );
+  )
   const newsItems = await Promise.all(urls.map(url => fetch(url)))
     .then(resp => Promise.all(resp.map(resp => resp.json())))
     .then(jsons =>
@@ -77,8 +76,8 @@ Index.getInitialProps = async function() {
         {}
       )
     )
-    .catch(err => console.log(err));
-  return { newsItems };
-};
+    .catch(err => console.log(err))
+  return { newsItems }
+}
 
-export default Index;
+export default Index

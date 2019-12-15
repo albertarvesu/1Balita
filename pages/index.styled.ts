@@ -1,10 +1,10 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 export const PageWrapper = styled.div`
   max-width: 72rem;
   margin: 0pt auto;
   padding: 1rem;
-`;
+`
 
 export const NavWrapper = styled.nav`
   display: flex;
@@ -17,29 +17,29 @@ export const NavWrapper = styled.nav`
     flex-direction: column;
     justify-content: space-evenly;
   }
-`;
+`
 
 export const LogoWrapper = styled.div`
   display: flex;
   align-items: center;
-`;
+`
 
 export const NavTitle = styled.h1`
   font-weight: bold;
   font-size: 2rem;
   margin-left: 0.5rem;
-`;
+`
 
 export const NavText = styled.h1`
   font-size: 1.25rem;
   margin-left: 0.5rem;
   color: #808080;
-`;
+`
 
 export const NavTextHeading = styled.span`
   color: #4d4d4d;
   font-weight: 400;
-`;
+`
 
 export const StyledGrid = styled.section`
   display: grid;
@@ -52,6 +52,6 @@ export const StyledGrid = styled.section`
     display: flex;
     flex-direction: column;
   }
-`;
+`
 
-export default PageWrapper;
+export default PageWrapper

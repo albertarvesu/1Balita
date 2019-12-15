@@ -1,14 +1,14 @@
-import React from 'react';
+import React from 'react'
 
-import { StyledHeader, StyledProviderLogo } from './Header.styled';
+import { StyledHeader, StyledProviderLogo } from './Header.styled'
 
-import { Link } from 'client/components/Styled/Link/Link';
-import { Header } from 'client/components/Styled/Typography/Header';
+import { Link } from 'client/components/Styled/Link/Link'
+import { Header } from 'client/components/Styled/Typography/Header'
 
 interface IProps {
-  src: string;
-  name: string;
-  to: string;
+  src: string
+  name: string
+  to: string
 }
 
 export const BlockHeader: React.FC<IProps> = ({ src, name, to }) => (
@@ -20,6 +20,6 @@ export const BlockHeader: React.FC<IProps> = ({ src, name, to }) => (
       </Link>
     </Header>
   </StyledHeader>
-);
+)
 
-export default BlockHeader;
+export default BlockHeader

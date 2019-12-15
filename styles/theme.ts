@@ -20,4 +20,4 @@ export const themeObject = {
   secondary500Color: '#7fdcea',
   secondary300Color: '#b2eaf3',
   secondary100Color: '#e5f8fa'
-};
+}

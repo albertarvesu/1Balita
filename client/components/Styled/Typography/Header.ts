@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 export const Header = styled.header`
   font-size: 1.25rem;
@@ -7,4 +7,4 @@ export const Header = styled.header`
       color: #4d4d4d;
     }
   }
-`;
+`
