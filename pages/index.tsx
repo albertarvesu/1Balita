@@ -2,6 +2,8 @@ import React, { useEffect } from 'react';
 
 import ReactGA from 'react-ga';
 import Head from 'next/head';
+import fetch from 'isomorphic-unfetch';
+
 import {
   LogoWrapper,
   NavWrapper,
@@ -17,9 +19,15 @@ import { SITE_NAME, SITE_TITLE } from '../constants';
 import './index.css';
 import newsProviders from './../providers.json';
 
+interface IProvider {
+  name: string;
+  link: string;
+  imageUrl: string;
+}
+
 ReactGA.initialize(process.env.GOOGLE_ANALYTICS_CODE || 'UA-154566102-1');
 
-const Index: React.FC = () => {
+const Index = ({ newsItems }) => {
   useEffect(() => {
     ReactGA.set({ page: window.location.pathname });
     ReactGA.pageview(window.location.pathname);
@@ -39,14 +47,38 @@ const Index: React.FC = () => {
         </NavWrapper>
         <Container topOuterSpacing={2}>
           <StyledGrid>
-            {newsProviders.map(item => (
-              <Block key={item.name} {...item} />
+            {newsProviders.map((provider: IProvider) => (
+              <Block
+                key={provider.name}
+                {...provider}
+                items={newsItems[provider.name]}
+              />
             ))}
           </StyledGrid>
         </Container>
       </PageWrapper>
     </React.Fragment>
   );
+};
+
+Index.getInitialProps = async function() {
+  const urls = newsProviders.map(
+    (provider: IProvider) =>
+      `${process.env.API_HOST}/news?provider=${provider.name}`
+  );
+  const newsItems = await Promise.all(urls.map(url => fetch(url)))
+    .then(resp => Promise.all(resp.map(resp => resp.json())))
+    .then(jsons =>
+      newsProviders.reduce(
+        (accum: any, provider: IProvider, index: number) => ({
+          ...accum,
+          [provider.name]: jsons[index]
+        }),
+        {}
+      )
+    )
+    .catch(err => console.log(err));
+  return { newsItems };
 };
 
 export default Index;
