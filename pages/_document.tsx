@@ -48,6 +48,11 @@ export default class MyDocument extends Document {
             href="https://fonts.googleapis.com/css?family=Rubik:300,400,500"
             rel="stylesheet"
           />
+          <script
+            data-ad-client="ca-pub-3350362568805867"
+            async
+            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+          ></script>
           <meta property="og:type" content="website" />
           <meta property="og:site_name" content={SITE_NAME} />
           <meta property="og:title" content={SITE_TITLE} />
@@ -62,7 +67,7 @@ export default class MyDocument extends Document {
             name="format-detection"
             content="telephone=no, address=no, email=no"
           />
-          <link rel="shortcut icon" href="/static/favicon.ico" />
+          <link rel="shortcut icon" href="/static/juan.png" />
         </Head>
         <body>
           <Main />
