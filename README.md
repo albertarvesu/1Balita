@@ -57,3 +57,9 @@ docker-compose up
 Wait for the logs to show "server started on port 3000", then navigate to `localhost` to view the app.
 
 The server will automatically restart anytime you save a `.ts` or `.js` file within the `server/` directory.
+
+Running the tests:
+
+```
+npm run test
+```

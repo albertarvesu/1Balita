@@ -25,7 +25,7 @@ interface IProvider {
   imageUrl: string
 }
 
-const Index = ({ newsItems }) => {
+export const Index = ({ newsItems }) => {
   useEffect(() => {
     ReactGA.initialize(process.env.GOOGLE_ANALYTICS_CODE || '')
     ReactGA.set({ page: window.location.pathname })
