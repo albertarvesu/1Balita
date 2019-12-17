@@ -21,7 +21,7 @@ const insert = async (screenName: string, tweet: any) => {
     provider: screenName,
     text: dropUrlFromText(tweet.text),
     url: extractUrlFromTweet(url),
-    mediaUrl: firstMedia && firstMedia.media_url,
+    mediaUrl: firstMedia && firstMedia.media_url_https,
     createdAt: tweet.created_at
   }
   Item.findOneAndUpdate(

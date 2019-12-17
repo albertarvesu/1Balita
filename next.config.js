@@ -7,6 +7,14 @@ const withCSS = require('@zeit/next-css')
 
 module.exports = withCSS(
   withOffline({
+    workboxOpts: {
+      runtimeCaching: [
+        {
+          urlPattern: /\.(?:png|jpg|jpeg|svg)$/,
+          handler: 'CacheFirst'
+        }
+      ]
+    },
     env: {
       GOOGLE_ANALYTICS_CODE: process.env.GOOGLE_ANALYTICS_CODE
     },
